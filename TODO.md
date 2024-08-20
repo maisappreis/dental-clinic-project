@@ -53,10 +53,15 @@
 
 
 ## Deployment GitHub Pages
-> npm run export
-> cd out
-> git init
+npm run build
+cd out
+git init
 git remote add origin https://github.com/maisappreis/dental-clinic.git
+git remote -v
 git add .
 git commit -m "Deploy do projeto no GitHub Pages"
-git push -u origin master
+git push -u origin master --force
+
+
+
+git remote set-url origin <nova-url>
