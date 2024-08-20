@@ -2,7 +2,7 @@
 const nextConfig = {
     output: 'export',
     basePath: '/dental-clinic',
-    // assetPrefix: '/dental-clinic/',
+    assetPrefix: '/dental-clinic/',
     reactStrictMode: true,
     images: {
       unoptimized: true,

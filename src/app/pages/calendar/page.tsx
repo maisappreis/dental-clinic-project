@@ -1,5 +1,5 @@
 import styles from "./Calendar.module.css";
-import Appointments from "./Appointments";
+import Appointments from "./appointments";
 
 const daysOfWeek = [
   { dayWeek: "Seg", day: "18/03" },
