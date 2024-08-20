@@ -13,15 +13,15 @@ const daysOfWeek = [
 // TODO: Receive the full name from the backend, and create a function to add a short name.
 
 const appointments = [
-  { time: "09:00", appointments: ["", "", "Luis Silva", "", "Amanda L.", ""] },
-  { time: "10:00", appointments: ["", "Renan B.", "", "", "", ""] },
-  { time: "11:00", appointments: ["", "", "Luis Silva", "", "Amanda L.", ""] },
-  { time: "13:00", appointments: ["Bianca", "", "Paulo", "", "", ""] },
-  { time: "14:00", appointments: ["", "", "", "", "", ""] },
-  { time: "15:00", appointments: ["", "", "Luis Silva", "", "Amanda L.", ""] },
-  { time: "16:00", appointments: ["", "José", "", "", "Lopes", ""] },
-  { time: "17:00", appointments: ["", "", "Maisa Preis", "", "André Lopes", ""] },
-  { time: "18:00", appointments: ["", "", "", "", "Bia", ""] },
+  { time: "09:00", patients: ["", "", "Luis Silva", "", "Amanda L.", ""] },
+  { time: "10:00", patients: ["", "Renan B.", "", "", "", ""] },
+  { time: "11:00", patients: ["", "", "Luis Silva", "", "Amanda L.", ""] },
+  { time: "13:00", patients: ["Bianca", "", "Paulo", "", "", ""] },
+  { time: "14:00", patients: ["", "", "", "", "", ""] },
+  { time: "15:00", patients: ["", "", "Luis Silva", "", "Amanda L.", ""] },
+  { time: "16:00", patients: ["", "José", "", "", "Lopes", ""] },
+  { time: "17:00", patients: ["", "", "Maisa Preis", "", "André Lopes", ""] },
+  { time: "18:00", patients: ["", "", "", "", "Bia", ""] },
 ]
 
 export default function Calendar() {
@@ -36,7 +36,7 @@ export default function Calendar() {
           </div>
         ))}
         {appointments.map((appointment) => (
-          <Appointments key={appointment.time} time={appointment.time} appointments={appointment.appointments} />
+          <Appointments key={appointment.time} time={appointment.time} patients={appointment.patients} />
         ))}
       </div>
     </div>
