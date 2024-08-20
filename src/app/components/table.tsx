@@ -25,7 +25,8 @@ const formatDate = (dateString: string): string => {
 };
 
 export default function Table({ columns, data, searchedNames }: TableProps) {
-  const [filteredData, setFilteredData] = useState<Data[]>([])
+  const [filteredData, setFilteredData] = useState<Data[]>([]);
+  const [statusClasses, setStatusClasses] = useState<string[]>([]);
 
   useEffect(() => {
     const sorted = [...data].sort((a, b) => {
@@ -47,6 +48,13 @@ export default function Table({ columns, data, searchedNames }: TableProps) {
       setFilteredData(filterData);
     }
   }, [data, searchedNames]);
+
+  useEffect(() => {
+    const classes = filteredData.map(row => 
+      `${styles.status} ${row.status ? styles.paid : styles.pay}`
+    );
+    setStatusClasses(classes);
+  }, [filteredData]);
 
   return (
     <div>
@@ -85,8 +93,13 @@ export default function Table({ columns, data, searchedNames }: TableProps) {
                             : column.key === 'date' || column.key === 'dueDate' ?
                               formatDate(row[column.key])
                               : column.key === 'status' ?
+                                // <button
+                                //   className={`${styles.status} ${row[column.key] ? styles.paid : styles.pay}`}
+                                // >
+                                //   {row[column.key] ? "Pago" : "À pagar"}
+                                // </button>
                                 <button
-                                  className={`${styles.status} ${row[column.key] ? styles.paid : styles.pay}`}
+                                  className={statusClasses[rowIndex]}
                                 >
                                   {row[column.key] ? "Pago" : "À pagar"}
                                 </button>

@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-
-// export default nextConfig;
-
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
     basePath: '/dental-clinic',
+    assetPrefix: '/dental-clinic/',
     images: {
-      unoptimized: true, // Desabilita a otimização de imagens, já que GitHub Pages não suporta otimizações dinâmicas
+      unoptimized: true,
     },
-    trailingSlash: true, // Adiciona uma barra ao final de cada URL
+    trailingSlash: true,
   }
   
-// module.exports = nextConfig
 export default nextConfig;
+
+// const nextConfig = {};
+// export default nextConfig;
+
+
+
